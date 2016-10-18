@@ -1,0 +1,21 @@
+{
+  "name": "bc-swarm-angular-lib",
+  "version": "1.0.0",
+  "description": "BetConstruct SWARM client lib",
+  "main": "index.html",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "uglifyjs src/modules/vbet5/main.js src/modules/vbet5/config.js src/modules/vbet5/*/*.js -c -m --comments -o dist/bc.js"
+  },
+  "keywords": [
+    "swarm",
+    "angular",
+    "betconstruct"
+  ],
+  "author": "BetConstruct",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}

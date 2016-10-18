@@ -1,0 +1,166 @@
+body, html {
+    height: 100%
+}
+
+body, form, form > ul, h1 {
+    width: 100%
+}
+
+form, form > ul, form > ul > li, h1, label, p {
+    float: left
+}
+
+a, abbr, acronym, address, applet, b, big, blockquote, body, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0
+}
+
+ol, ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+blockquote:after, blockquote:before, q:after, q:before {
+    content: '';
+    content: none;
+    color: #FFF;
+    font: 14px Arial, Helvetica, sans-serif
+}
+
+body, label {
+    line-height: 16px
+}
+
+ins {
+    text-decoration: none
+}
+
+del {
+    text-decoration: line-through
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+input::-ms-clear {
+    display: none
+}
+
+::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background: #d5d5e0;
+    color: #000
+}
+
+body > div {
+    min-width: 300px;
+    max-width: 980px;
+    margin: 0 auto;
+    background: #ececf5;
+    padding: 10px 10px 40px;
+    min-height: 100%;
+    box-shadow: 0 0 1px 0 #329c67
+}
+
+body > div:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+h1 {
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 10px 20px
+}
+
+form > ul {
+    background: #d5d5e0;
+    box-shadow: 0 0 0 1px #d9d9ef inset
+}
+
+form > ul > li {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #dadae2
+}
+
+button, input, select {
+    margin: 0;
+    height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    width: 100%
+}
+
+form > ul > li:last-child {
+    width: 100%
+}
+
+label {
+    width: 100%;
+    font-size: 11px;
+    padding: 0 0 5px 2px;
+    color: #7c7c82
+}
+
+input, select {
+    float: left;
+    font-size: 12px;
+    background: #ffffff;
+    line-height: 14px;
+    border: 1px solid #b6b6bd;
+    outline: 0;
+    border-radius: 3px;
+    transition: border 320ms
+}
+
+:focus {
+    outline: 0;
+    border-color: #329c67
+}
+
+button {
+    float: right;
+    margin: 0 0 0 10px;
+    max-width: 240px;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 700;
+    border-radius: 3px;
+    border: none;
+    background: #329c67;
+    text-transform: uppercase;
+    color: #fff;
+    transition: background .3s
+}
+
+button:hover {
+    background: #298256
+}
+
+p {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 20px 0;
+    word-break: break-word;
+}

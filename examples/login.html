@@ -1,0 +1,95 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app="exampleApp">
+<head>
+    <meta charset="utf-8">
+    <title>BetConstruct login example</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.min.js"></script>
+    <script src="../lib/amplify.store.min.js"></script>
+    <script src="../dist/bc.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    angular.module('exampleApp', ['vbet5']).controller('loginCtrl', ['$scope', 'Zergling', function ($scope, Zergling) {
+        'use strict';
+
+
+        /**
+         *  Logs user in using Zergling.login method
+         */
+        $scope.login = function login () {
+
+            var loginInfo = {username: $scope.loginName, password: $scope.password};
+            Zergling.login(loginInfo).then(
+                    function () {
+                        $scope.loggedIn = true;
+                        $scope.message = "Successfully logged in";
+                    },
+                    function (response) {
+                        $scope.message = "Login failed: " + response.msg + JSON.stringify(response.data);
+                    }
+            )
+        };
+
+        /**
+         * logs user out
+         */
+        $scope.logout = function logout() {
+            Zergling.logout().then(function () {
+                $scope.loggedIn = false;
+                $scope.message = "Successfully logged out";
+            });
+        };
+
+        /**
+         *  Retrieves user profile using Zergling.get
+         */
+        $scope.getProfile = function getProfile () {
+            var request = {'source': 'user', 'what': {'profile': []}};
+            Zergling.get(request).then(function (result) {
+                $scope.message = "User data: "  + JSON.stringify(result.data);
+            });
+        };
+
+
+    }]);
+
+</script>
+
+    <div ng-controller="loginCtrl">
+        <h1>
+            This example shows the basic login process using username and password.
+            There are other login types such as
+            using stored auth token, login with facebook credentials,
+            login with "odnoklassniki" social network credentials.
+            See Zergling.login method for details.
+        </h1>
+        <form ng-hide="loggedIn">
+            <ul>
+                <li>
+                    <label for="login">login</label>
+                    <input type="text" ng-model="loginName" id="login" placeholder="login name or email">
+                </li>
+                <li>
+                    <label for="password">password</label>
+                    <input type="password" ng-model="password" id="password">
+                </li>
+                <li>
+                    <button ng-click="login()">login</button>
+                </li>
+            </ul>
+        </form>
+        <ul>
+            <li>
+                <button ng-click="logout()"     ng-show="loggedIn">logout</button>
+            </li>
+            </li>
+                <button ng-click="getProfile()" ng-show="loggedIn">get user profile</button>
+            </li>
+        </ul>
+        <p ng-bind="message"></p>
+    </div>
+</body>
+</html>
